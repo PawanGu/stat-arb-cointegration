@@ -29,7 +29,7 @@ stat-arb/
 │  └─ plotting.py
 ├─ notebooks/
 │  ├─ 00_quick_demo.py
-│  ├─ 01_quick_demo.py
+│  ├─ 01_pair_analysis.py
 └─ data/
    └─ (put raw/processed data here)
 ```
@@ -50,3 +50,6 @@ pip install -r requirements.txt
 python notebooks/00_quick_demo.py
 python notebooks/01_pair_analysis.py
 ```
+## Example Result
+Equity curve of the best Sharpe pair (out-of-sample):
+![Equity Curve](paper/figs/equity_curve.png)
