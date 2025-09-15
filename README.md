@@ -45,6 +45,7 @@ pip install -r requirements.txt
 5. **Run backtest** with `src/backtest.py` and evaluate via `src/evaluation.py`.
 6. **Walk-forward** train/test splits using `src/walkforward.py`.
 
+## Running the code
 ```bash
 python notebooks/00_quick_demo.py
 python notebooks/01_pair_analysis.py
