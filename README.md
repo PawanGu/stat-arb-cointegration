@@ -52,4 +52,4 @@ python notebooks/01_pair_analysis.py
 ```
 ## Example Result
 Equity curve of the best Sharpe pair (out-of-sample):
-![Equity Curve](paper/figs/equity_curve.png)
+![Equity Curve](paper/figs/equity_XOM_CVX.png)
