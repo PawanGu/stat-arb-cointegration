@@ -34,8 +34,18 @@ stat-arb/
    └─ (put raw/processed data here)
 ```
 
-## Quick Demo
+## Quickstart
+1. **Install** (Python 3.10+ recommended)
+```bash
+pip install -r requirements.txt
+```
+2. **Configure** parameters in `config.yaml` (tickers, dates, costs, thresholds).
+3. **Fetch data** (e.g., via `src/data.py` using yfinance or your own CSVs).
+4. **Select pairs** with `src/pairs.py` (correlation screen + Engle–Granger/Johansen).
+5. **Run backtest** with `src/backtest.py` and evaluate via `src/evaluation.py`.
+6. **Walk-forward** train/test splits using `src/walkforward.py`.
+
 ```bash
 python notebooks/00_quick_demo.py
-
 python notebooks/01_pair_analysis.py
+```
