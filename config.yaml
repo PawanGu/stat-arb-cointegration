@@ -1,0 +1,53 @@
+# =========================
+# Statistical Arbitrage Config
+# =========================
+
+universe:
+  # Example tickers — adjust to your preference (keep liquid, US-listed names)
+  tickers: ["AAL", "DAL", "XOM", "CVX", "KO", "PEP", "AAPL", "MSFT"]
+
+data:
+  start: "2018-01-01"
+  end:   "2025-01-01"
+  price_field: "Adj Close"     # falls back to "Close" if adjusted unavailable
+  source: "alphavantage"       # informational; ignored in current data.py
+  csv_dir: "data"              # reserved if you later add CSV caching
+
+screening:
+  min_corr: 0.6        # correlation screen on returns
+  min_volume: 0        # unused for Alpha Vantage (kept for compatibility)
+  lookback_days: 252   # lookback for correlation screen
+
+cointegration:
+  method: "engle_granger"   # or "johansen"
+  adf_alpha: 0.05
+  regression: "OLS"         # hedge ratio via OLS on log prices
+
+signal:
+  rolling_window: 60   # window for rolling mean/std of residuals
+  z_entry: 2.0         # entry threshold
+  z_exit: 0.5          # exit threshold
+  z_stop: 4.0          # hard stop threshold
+
+backtest:
+  initial_capital: 1_000_000
+  per_trade_notional: 50_000
+  dollar_neutral: true
+  beta_neutral: false         # reserved for future extensions
+  rebalance: "daily"
+
+costs:
+  commission_per_share: 0.0005
+  spread_bps: 5
+  slippage_bps: 2
+
+risk:
+  max_pair_gross: 0.2     # max 20% gross notional per pair (not enforced yet)
+  max_total_leverage: 2.0
+  max_active_pairs: 10
+  time_stop_days: 20      # enforced in backtester
+
+walkforward:
+  train_days: 504         # ~2 years
+  test_days: 63           # ~1 quarter
+  refit: true
