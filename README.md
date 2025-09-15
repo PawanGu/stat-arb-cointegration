@@ -28,9 +28,8 @@ stat-arb/
 │  ├─ walkforward.py
 │  └─ plotting.py
 ├─ notebooks/
-│  ├─ 01_explore_data.ipynb
-│  ├─ 02_pair_selection.ipynb
-│  └─ 03_backtest_results.ipynb
+│  ├─ 00_quick_demo.py
+│  ├─ 01_quick_demo.py
 └─ data/
    └─ (put raw/processed data here)
 ```
